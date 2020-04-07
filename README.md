@@ -1,4 +1,4 @@
-# total heroes - 51 ?
+# total heroes - 52
 # level 1 (9)
 - Miya
 - Vale
@@ -40,7 +40,7 @@
 - Gusion
 - Khufra
 
-# level 4 (10)
+# level 4 (11)
 - Estes
 - Karina
 - Claude
@@ -51,6 +51,7 @@
 - Aurora
 - Terizla
 - Guinevere
+- Vexana
 
 # level 5 (6)
 - Irithel
