@@ -1,19 +1,17 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { roles, factions, heroes, goldToColorMap } from './db.js';
-import Paper from '@material-ui/core/Paper';
+import { Paper, IconButton } from '@material-ui/core';
 import ToggleButton from './components/ToggleButton.js';
-import { fontWeight } from '../node_modules/@material-ui/system';
-
 const useStyles = makeStyles({
   container: {
     height: '100%',
-    display: 'flex'
   },
-  sidebar: {
-    minWidth: 300,
-    height: '100%'
-  },
+  avatar: {
+    width: 30,
+    height: 30,
+    margin: '0 2px'
+  }
 })
 
 function App() {
@@ -44,17 +42,15 @@ function App() {
 
   return (
     <div className={classes.container}>
-      <div className={classes.sidebar}>
-        <div>
-          <div>ROLES</div>
+      <div style={{ display: 'flex'}}>
+        <div style={{ display: 'flex'}}>
           {Object.keys(roles).map(role => (
-            <ToggleButton key={role.name} text={roles[role].name} addItem={addRole} removeItem={removeRole}/>
+            <ToggleButton key={roles[role].name} id={roles[role].name} imgSrc={`images/roles/${roles[role].name}.png`} addItem={addRole} removeItem={removeRole}/>
           ))}
         </div>
-        <div>
-          <div>FACTIONS</div>
+        <div style={{ display: 'flex'}}>
           {Object.keys(factions).map(faction => (
-            <ToggleButton key={faction.name} text={factions[faction].name} addItem={addFaction} removeItem={removeFaction}/>
+            <ToggleButton key={factions[faction].name} id={factions[faction].name} imgSrc={`images/factions/${factions[faction].name}.png`} addItem={addFaction} removeItem={removeFaction}/>
           ))}
         </div>
       </div>
@@ -67,27 +63,28 @@ function App() {
       }}>
         {heroes.map(hero => (
             <Paper style={{
-              height: 170,
-              width: 100,
+              height: 200,
+              width: 120,
               margin: 5,
               border: `3px solid ${goldToColorMap[hero.gold]}`,
               boxShadow: `0 2px 4px 0 ${goldToColorMap[hero.gold]}, 0 3px 10px 0 ${goldToColorMap[hero.gold]}`,
-              backgroundImage: `url(images/${hero.name === "Chang'e" ? "Change" : hero.name}.png)`,
+              backgroundImage: `url(images/heroes/${hero.name === "Chang'e" ? "Change" : hero.name}.png)`,
               backgroundSize: 'cover',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'flex-end'
+              justifyContent: 'flex-end',
+              boxSizing: 'border-box',
             }}
             >
 
-              {/* <div>
+              <div style={{ background: 'rgba(0,0,0,.6)', display: 'flex', alignItems: 'center', padding: 5}}>
                 {hero.roles.map(role => (
-                  <div>{role.name}</div>
+                  <img src={`images/roles/${role.name}.png`} className={classes.avatar} />
                 ))}
                 {hero.factions.map(faction => (
-                  <div>{faction.name}</div>
+                  <img src={`images/factions/${faction.name}.png`} className={classes.avatar} />
                 ))}
-              </div> */}
+              </div>
               <div
                 style={{
                   background: 'rgb(6, 28, 37)',

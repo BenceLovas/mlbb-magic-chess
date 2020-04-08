@@ -4,20 +4,21 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   listItem: {
-    padding: 10,
+    width: 30,
+    height: 30,
   }
 })
 
 
-const ToggleButton = React.memo(({text, addItem, removeItem}) => {
+const ToggleButton = React.memo(({id, imgSrc, addItem, removeItem}) => {
   const classes = useStyles();
   const [isOn, setOn] = useState(false);
 
   const handleClick = () => {
     if (isOn) {
-      removeItem(text)
+      removeItem(id)
     } else {
-      addItem(text)
+      addItem(id)
     }
     setOn(!isOn);
   }
@@ -30,7 +31,7 @@ const ToggleButton = React.memo(({text, addItem, removeItem}) => {
         background: isOn ? '#eee' : '#fff'
       }}
     >
-      {text}
+      <img src={imgSrc} className={classes.listItem} />
     </Paper>
   ) 
 })
