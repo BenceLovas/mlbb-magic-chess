@@ -92,6 +92,13 @@ const factions = {
   },
 }
 
+const goldToColorMap = {
+  1: '#a9a9aa',
+  2: '#57a44f',
+  3: '#4981e6',
+  4: '#af2de6',
+  5: '#e78646',
+}
 
 const heroes = [
   // LEVEL 1
@@ -417,4 +424,5 @@ export {
   roles,
   factions,
   heroes,
+  goldToColorMap,
 }

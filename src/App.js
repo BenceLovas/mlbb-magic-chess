@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { roles, factions, heroes } from './db.js';
+import { roles, factions, heroes, goldToColorMap } from './db.js';
 import Paper from '@material-ui/core/Paper';
 import ToggleButton from './components/ToggleButton.js';
+import { fontWeight } from '../node_modules/@material-ui/system';
 
 const useStyles = makeStyles({
   container: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles({
     display: 'flex'
   },
   sidebar: {
-    width: 300,
+    minWidth: 300,
     height: '100%'
   },
 })
@@ -57,7 +58,50 @@ function App() {
           ))}
         </div>
       </div>
-      <div>hello</div>
+      <div style={{
+        padding: 20,
+        display: 'flex',
+        flexWrap: 'wrap',
+        // if this is not here space appears between divs vertically
+        height: 0,
+      }}>
+        {heroes.map(hero => (
+            <Paper style={{
+              height: 170,
+              width: 100,
+              margin: 5,
+              border: `3px solid ${goldToColorMap[hero.gold]}`,
+              boxShadow: `0 2px 4px 0 ${goldToColorMap[hero.gold]}, 0 3px 10px 0 ${goldToColorMap[hero.gold]}`,
+              backgroundImage: `url(images/${hero.name === "Chang'e" ? "Change" : hero.name}.png)`,
+              backgroundSize: 'cover',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end'
+            }}
+            >
+
+              {/* <div>
+                {hero.roles.map(role => (
+                  <div>{role.name}</div>
+                ))}
+                {hero.factions.map(faction => (
+                  <div>{faction.name}</div>
+                ))}
+              </div> */}
+              <div
+                style={{
+                  background: 'rgb(6, 28, 37)',
+                  color: '#fff',
+                  fontWeight: 500,
+                  letterSpacing: 0.15,
+                  padding: 5,
+                }}
+              >
+                {hero.name}
+              </div>
+            </Paper>
+        ))}
+      </div>
     </div>
   );
 }
