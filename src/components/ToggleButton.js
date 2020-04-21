@@ -4,8 +4,8 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   listItem: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
   }
 })
 
@@ -28,7 +28,9 @@ const ToggleButton = React.memo(({id, imgSrc, addItem, removeItem}) => {
       className={classes.listItem} 
       onClick={handleClick}
       style={{
-        background: isOn ? '#eee' : '#fff'
+        background: isOn ? '#333' : '#fff',
+        padding: 5,
+        margin: 2,
       }}
     >
       <img src={imgSrc} className={classes.listItem} />
@@ -36,6 +38,6 @@ const ToggleButton = React.memo(({id, imgSrc, addItem, removeItem}) => {
   ) 
 })
 
-ToggleButton.whyDidYouRender = true
+// ToggleButton.whyDidYouRender = true
 
 export default ToggleButton;
