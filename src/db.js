@@ -27,10 +27,6 @@ const roles = {
     name: 'Summoner',
     abbr: 'SM'
   },
-  support: {
-    name: 'Support',
-    abbr: 'SP'
-  },
   wrestler: {
     name: 'Wrestler',
     abbr: 'W',
@@ -58,9 +54,9 @@ const factions = {
     name: 'Cyborg',
     abbr: 'CY'
   },
-  scarletShadow: {
-    name: 'Scarlet Shadow',
-    abbr: 'SS'
+  bloodDemon: {
+    name: 'Blood Demon',
+    abbr: 'BD'
   },
   dragonsAltar: {
     name: 'Dragons Altar',
@@ -85,10 +81,6 @@ const factions = {
   empire: {
     name: 'Empire',
     abbr: 'EM'
-  },
-  undead: {
-    name: 'Undead',
-    abbr: 'U',
   },
 }
 
@@ -139,12 +131,6 @@ const heroes = [
     factions: [factions.dragonsAltar],
   },
   {
-    name: 'Rafaela',
-    gold: 1,
-    roles: [roles.support],
-    factions: [factions.monasteryOfLight],
-  },
-  {
     name: 'Martis',
     gold: 1,
     roles: [roles.weaponMaster],
@@ -176,16 +162,10 @@ const heroes = [
     factions: [factions.cyborg],
   },
   {
-    name: 'Hanabi',
+    name: 'Carmilla',
     gold: 2,
-    roles: [roles.marksman],
-    factions: [factions.scarletShadow],
-  },
-  {
-    name: 'Hayabusa',
-    gold: 2,
-    roles: [roles.assasin],
-    factions: [factions.scarletShadow],
+    roles: [roles.wrestler],
+    factions: [factions.bloodDemon],
   },
   {
     name: 'Baxia',
@@ -200,9 +180,9 @@ const heroes = [
     factions: [factions.dragonsAltar],
   },
   {
-    name: 'Masha',
+    name: 'Franco',
     gold: 2,
-    roles: [roles.wrestler],
+    roles: [roles.weaponMaster],
     factions: [factions.northernVale],
   },
   {
@@ -215,7 +195,7 @@ const heroes = [
     name: 'Moskov',
     gold: 2,
     roles: [roles.marksman],
-    factions: [factions.abyss, factions.undead],
+    factions: [factions.abyss],
   },
   {
     name: 'Zhask',
@@ -255,10 +235,10 @@ const heroes = [
     factions: [factions.westernDesert],
   },
   {
-    name: 'Angela',
+    name: 'Khufra',
     gold: 3,
-    roles: [roles.support],
-    factions: [factions.cyborg],
+    roles: [roles.wrestler],
+    factions: [factions.westernDesert],
   },
   {
     name: 'Wanwan',
@@ -308,19 +288,7 @@ const heroes = [
     roles: [roles.assasin],
     factions: [factions.empire],
   },
-  {
-    name: 'Khufra',
-    gold: 3,
-    roles: [roles.wrestler],
-    factions: [factions.undead],
-  },
   // LEVEL 4
-  {
-    name: 'Estes',
-    gold: 4,
-    roles: [roles.support],
-    factions: [factions.elf],
-  },
   {
     name: 'Karina',
     gold: 4,
@@ -340,10 +308,16 @@ const heroes = [
     factions: [factions.cyborg],
   },
   {
-    name: 'Kagura',
+    name: 'Bruno',
+    gold: 4,
+    roles: [roles.marksman],
+    factions: [factions.cyborg],
+  },
+  {
+    name: 'Cecilion',
     gold: 4,
     roles: [roles.mage],
-    factions: [factions.scarletShadow],
+    factions: [factions.bloodDemon],
   },
   {
     name: 'Sun',
@@ -352,10 +326,16 @@ const heroes = [
     factions: [factions.dragonsAltar],
   },
   {
-    name: 'Granger',
+    name: 'Natalia',
     gold: 4,
-    roles: [roles.marksman],
+    roles: [roles.assasin],
     factions: [factions.monasteryOfLight],
+  },
+  {
+    name: 'Popol and Kupa',
+    gold: 4,
+    roles: [roles.marksman, roles.summoner],
+    factions: [factions.northernVale],
   },
   {
     name: 'Aurora',
@@ -364,22 +344,10 @@ const heroes = [
     factions: [factions.northernVale],
   },
   {
-    name: 'Terizla',
-    gold: 4,
-    roles: [roles.weaponMaster],
-    factions: [factions.abyss],
-  },
-  {
     name: 'Guinevere',
     gold: 4,
     roles: [roles.wrestler],
     factions: [factions.empire],
-  },
-  {
-    name: 'Vexana',
-    gold: 4,
-    roles: [roles.summoner],
-    factions: [factions.undead],
   },
   // LEVEL 5
   {
@@ -401,6 +369,12 @@ const heroes = [
     factions: [factions.dragonsAltar],
   },
   {
+    name: 'Thamuz',
+    gold: 5,
+    roles: [roles.weaponMaster],
+    factions: [factions.abyss],
+  },
+  {
     name: 'Gatotkaca',
     gold: 5,
     roles: [roles.wrestler],
@@ -411,12 +385,6 @@ const heroes = [
     gold: 5,
     roles: [roles.mage],
     factions: [factions.empire],
-  },
-  {
-    name: 'Leomord',
-    gold: 5,
-    roles: [roles.weaponMaster],
-    factions: [factions.undead],
   },
 ];
 

@@ -71,14 +71,21 @@ function App() {
         // if this is not here space appears between divs vertically
         height: 0,
       }}>
-        {displayedHeroes.map(hero => (
+        {displayedHeroes.map(hero => {
+          let imageName = hero.name;
+          if (hero.name === "Chang'e") {
+            imageName = "Change";
+          } else if (hero.name === "Popol and Kupa") {
+            imageName = "PopolandKupa";
+          }
+          return (
             <Paper style={{
               height: 200,
               width: 120,
               margin: 5,
               border: `5px solid ${goldToColorMap[hero.gold]}`,
               boxShadow: `0 2px 4px 0 ${goldToColorMap[hero.gold]}, 0 3px 10px 0 ${goldToColorMap[hero.gold]}`,
-              backgroundImage: `url(images/heroes/${hero.name === "Chang'e" ? "Change" : hero.name}.png)`,
+              backgroundImage: `url(images/heroes/${imageName}.png)`,
               backgroundSize: 'cover',
               display: 'flex',
               flexDirection: 'column',
@@ -107,7 +114,7 @@ function App() {
                 {hero.name}
               </div>
             </Paper>
-        ))}
+        )})}
       </div>
     </div>
   );
